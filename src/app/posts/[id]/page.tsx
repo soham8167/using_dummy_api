@@ -30,16 +30,15 @@ export default async function PostPage({ params }: Props) {
         <div className="w-full max-w-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow p-6">
           <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
             <div>
-                 <h1 className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              <h1 className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Post {post.id}
               </h1>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                 {post.title}
               </h2>
-             
             </div>
 
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Link
                 href="/"
                 className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-150"

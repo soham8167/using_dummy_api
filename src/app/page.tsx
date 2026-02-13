@@ -24,34 +24,33 @@ export default function Home() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
             All Posts
           </h1>
         </div>
 
-        {/* Loading State */}
+        {/* Loading */}
         {isPending && (
           <div className="flex flex-col items-center justify-center py-12 sm:py-20">
-            <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin dark:border-gray-700 dark:border-t-blue-400"></div>
-            <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
+            <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">
               Loading posts...
             </p>
           </div>
         )}
 
-        {/* Error State */}
+        {/* Error */}
         {isError && !isPending && (
-          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 sm:p-6">
-            <h2 className="text-lg font-semibold text-red-800 dark:text-red-400 mb-2">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+            <h2 className="text-lg font-semibold text-red-800 mb-2">
               Error Loading Posts
             </h2>
-            <p className="text-red-700 dark:text-red-300">{errorMessage}</p>
+            <p className="text-red-700">{errorMessage}</p>
           </div>
         )}
 
-        {/* Posts Grid */}
+        {/* Grid */}
         {!isPending && !isError && posts.length > 0 && (
-         
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {posts.map((post) => (
               <Card key={post.id} post={post} />
@@ -59,7 +58,7 @@ export default function Home() {
           </div>
         )}
 
-        {/* Empty State */}
+        {/* Empty */}
         {!isPending && !isError && posts.length === 0 && (
           <div className="text-center py-12 sm:py-20">
             <p className="text-gray-600 dark:text-gray-400 text-lg">

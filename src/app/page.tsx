@@ -20,11 +20,11 @@ export default function Home() {
     error instanceof Error ? error.message : "Failed to fetch posts";
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20 sm:pt-20 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
             All Posts
           </h1>
         </div>
@@ -51,7 +51,7 @@ export default function Home() {
 
         {/* Grid */}
         {!isPending && !isError && posts.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {posts.map((post) => (
               <Card key={post.id} post={post} />
             ))}
@@ -61,7 +61,7 @@ export default function Home() {
         {/* Empty */}
         {!isPending && !isError && posts.length === 0 && (
           <div className="text-center py-12 sm:py-20">
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg">
               No posts found.
             </p>
           </div>
